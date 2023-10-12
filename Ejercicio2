@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNkqYvxoOL0B0es0327hlr9",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JoshuaUgarte/MatematicasDiscretas/blob/Tarea4Ejercicio2/Ejercicio2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 26,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4eWpxbrLD11l",
+        "outputId": "06837617-9e46-4025-a2b2-3d796c4fd089"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese una lista de números de mayor a menor separados por espacios: 2 1 0\n",
+            "Secuencia b:\n",
+            "[2, 1, 0]\n"
+          ]
+        }
+      ],
+      "source": [
+        "def calcular_b(a):\n",
+        "    n = len(a)\n",
+        "    b = [0] * n\n",
+        "    for i in range(n - 1, -1, -1):\n",
+        "        for j in range(i + 1, n):\n",
+        "            if a[i] > a[j]:\n",
+        "                b[i] += 1\n",
+        "    return b\n",
+        "\n",
+        "def main():\n",
+        "    user_input = input(\"Ingrese una lista de números de mayor a menor separados por espacios: \")\n",
+        "    a = [int(x) for x in user_input.split()]\n",
+        "\n",
+        "    b = calcular_b(a)\n",
+        "    print(\"Secuencia b:\")\n",
+        "    print(b)\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()\n"
+      ]
+    }
+  ]
+}
